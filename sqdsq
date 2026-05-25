@@ -1009,7 +1009,7 @@
             end)
 
             Library:Connection(InputService.InputBegan, function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:Hovering({Items.Colorpicker, Items.Animations.Items.DropdownElements}) and Items.Colorpicker.Visible then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 and Items.Colorpicker.Visible and not Library:Hovering({Items.Colorpicker, Items.Animations.Items.DropdownElements}) then
                     Cfg.SetVisible(false)
                 end
             end) 
@@ -3346,7 +3346,7 @@
                     }, TweenInfo.new(Library.DraggingSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0))
                 end
 
-                if (not Library:Hovering(Items.Tooltip)) and Cfg.Tweening == false and Items.Outline.Visible then 
+                if Items.Outline.Visible and (not Library:Hovering(Items.Tooltip)) and Cfg.Tweening == false then 
                     Cfg.Tween(false)   
                 end 
             end)
@@ -3872,7 +3872,7 @@
 
             Library:Connection(InputService.InputBegan, function(input, game_event)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                    if not Library:Hovering({Items.DropdownElements, Items.Dropdown}) then
+                    if Items.Dropdown.Visible and not Library:Hovering({Items.DropdownElements, Items.Dropdown}) then
                         Cfg.SetVisible(false)
                         Cfg.Open = false
                     end 
@@ -4406,7 +4406,7 @@
 
             Library:Connection(InputService.InputBegan, function(input, game_event) 
                 if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                    if not (Library:Hovering(Items.Dropdown.Items.DropdownElements) or Library:Hovering(Items.Information)) and Items.Information.Visible then
+                    if Items.Information.Visible and not (Library:Hovering(Items.Dropdown.Items.DropdownElements) or Library:Hovering(Items.Information)) then
                         Cfg.SetVisible(false)
                         Cfg.Open = false;
                     end 
@@ -6266,7 +6266,7 @@
                 end)    
 
                 Library:Connection(InputService.InputEnded, function(input, game_event) 
-                    if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and Elements.Information.Visible and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
+                    if Elements.Information.Visible and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
                         Config.Tween(false)
                         Config.Open = false
                     end 
@@ -6599,7 +6599,7 @@
                 end)    
 
                 Library:Connection(InputService.InputEnded, function(input, game_event) 
-                    if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and Elements.Information.Visible and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
+                    if Elements.Information.Visible and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
                         Config.Tween(false)
                         Config.Open = false
                     end 
@@ -7271,7 +7271,7 @@
                 end)    
 
                 Library:Connection(InputService.InputEnded, function(input, game_event) 
-                    if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and Elements.Information.Visible and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
+                    if Elements.Information.Visible and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.MouseButton2) and not (Library:Hovering({Elements.Information}) or Config.DetermineClosing()) then 
                         Config.Tween(false)
                         Config.Open = false
                     end 
